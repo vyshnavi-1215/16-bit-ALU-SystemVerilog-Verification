@@ -61,13 +61,25 @@ Generator → Driver → ALU (DUT) → Monitor
 
 ## Project Structure
 
-```
-├── design.sv        # 16-bit ALU RTL design (DUT)
-├── testbench.sv      # SystemVerilog testbench (transaction, driver, monitor, scoreboard, coverage, env, test, tb)
+16-bit-ALU-SystemVerilog-Verification/
+├── design.sv
+├── testbench/
+│   ├── transaction.sv
+│   ├── interface.sv
+│   ├── generator.sv
+│   ├── driver.sv
+│   ├── monitor.sv
+│   ├── scoreboard.sv
+│   ├── coverage.sv
+│   ├── environment.sv
+│   ├── test.sv
+│   └── tb_top.sv
+├── filelist.f
 ├── docs/
-│   └── report.pdf     # Project report
+│   └── report.pdf
+├── LICENSE
+├── .gitignore
 └── README.md
-```
 
 ## Tools Used
 
@@ -75,14 +87,6 @@ Generator → Driver → ALU (DUT) → Monitor
 - **Simulator:** Synopsys VCS
 - **Waveform Viewer:** EDA Playground EPWave / DVE
 
-## How to Run
-
-```bash
-vcs -full64 -licqueue -timescale=1ns/1ns +vcs+flush+all +warn=all -sverilog design.sv testbench.sv
-./simv +vcs+lic+wait
-```
-
-This compiles the design and testbench, runs the simulation for 300 randomized transactions, and prints a pass/fail summary along with functional coverage results.
 
 ## Results
 
@@ -96,8 +100,8 @@ This compiles the design and testbench, runs the simulation for 300 randomized t
 
 ## Author
 
-**[Your Name]**
-[Your Department / College Name]
+Mannem Vyshnavi 
+ECE 
 
 ## License
 
